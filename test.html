@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="./du_web_sdk.js"></script>
+  <body>
+    <div id="app">
+      <span>hello</span>
+    </div>
+    <div>
+      <h3 id="TZclick">跳转详情页</h3>
+    </div>
+
+    <dir id="sessionid">
+      <button>调用sessionid的接口</button>
+    </dir>
+  </body>
+  <script>
+    du_web_sdk.setConfig({
+      deb: "false",
+    });
+
+    du_web_sdk.getBrowserID(
+      "939kytrsgc7puf5uw6o4mx9iesrf3rsqewdr",
+      "h5_wlljzxjnka",
+      "pageview+xiaoming",
+      function (CADD) {
+        console.log("CADD: " + CADD);
+      }
+    );
+
+    document.querySelector("#TZclick").onclick = function () {
+      du_web_sdk.getBrowserID(
+        "939kytrsgc7puf5uw6o4mx9iesrf3rsqewdr",
+        "h5_wlljzxjnka",
+        "click+xiaoming",
+        function (CADD) {
+          console.log("CADD: " + CADD + "跳转页面");
+        }
+      );
+      location.href = "https://www.shuzilm.cn/";
+    };
+
+    document.querySelector("#sessionid").onclick = function () {
+      du_web_sdk.getSessionID(
+        "939kytrsgc7puf5uw6o4mx9iesrf3rsqewdr",
+        "h5_wlljzxjnka",
+        "test2",
+        function (res) {
+          console.log("sessionID:" + res + "=====-----");
+        }
+      );
+    };
+  </script>
+</html>
