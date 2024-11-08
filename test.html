@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <script src="./du_web_sdk.js"></script>
+  <!-- <script src="./du_web_sdk.js"></script> -->
+  <script src="./du_web_sdk_1.7.1喜马拉雅/du_web_sdk/du_web_sdk.js"></script>
+
   <body>
     <div id="app">
       <span>hello</span>
@@ -22,21 +24,21 @@
     du_web_sdk.setConfig({
       deb: "false",
     });
-
+    
     du_web_sdk.getBrowserID(
-      "939kytrsgc7puf5uw6o4mx9iesrf3rsqewdr",
-      "h5_wlljzxjnka",
-      "pageview+xiaoming",
+      "t6pfoml9679z52kqw93uqu75eflqdg1bykhl",
+      "h5_goyxvzyohd",
+      '',
       function (CADD) {
-        console.log("CADD: " + CADD);
+        console.log("CADD11111: " + CADD);
       }
     );
 
     document.querySelector("#TZclick").onclick = function () {
       du_web_sdk.getBrowserID(
-        "939kytrsgc7puf5uw6o4mx9iesrf3rsqewdr",
-        "h5_wlljzxjnka",
-        "click+xiaoming",
+        "t6pfoml9679z52kqw93uqu75eflqdg1bykhl",
+        "h5_goyxvzyohd",
+        '',
         function (CADD) {
           console.log("CADD: " + CADD + "跳转页面");
         }
@@ -45,14 +47,16 @@
     };
 
     document.querySelector("#sessionid").onclick = function () {
+
       du_web_sdk.getSessionID(
         "939kytrsgc7puf5uw6o4mx9iesrf3rsqewdr",
         "h5_wlljzxjnka",
         "test2",
         function (res) {
-          console.log("sessionID:" + res + "=====-----");
+          console.log("sessionID:" + res + `这是第次。`);
         }
       );
-    };
+    }
+      
   </script>
 </html>
