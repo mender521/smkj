@@ -48,13 +48,12 @@
 
     document.querySelector("#sessionid").onclick = function () {
 
-        console.log(`这是第 ${i + 1} 次循环。`)
       du_web_sdk.getSessionID(
         "939kytrsgc7puf5uw6o4mx9iesrf3rsqewdr",
         "h5_wlljzxjnka",
         "test2",
         function (res) {
-          console.log("sessionID:" + res + `这是第 ${i + 1} 次循环。`);
+          console.log("sessionID:" +res );
         }
       );
     }
